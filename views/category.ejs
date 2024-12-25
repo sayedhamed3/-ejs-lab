@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= menuItems[0].category.charAt(0).toUpperCase() +  menuItems[0].category.slice(1) %> Menu</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <h1><%= menuItems[0].category.charAt(0).toUpperCase() +  menuItems[0].category.slice(1) %> Menu</h1>
+    <ol>
+        <% menuItems.forEach(menuItem=> { %>
+            <li>
+                <ul>
+                    <li>Name: <%= menuItem.name %></li>
+                    <li>Price: <%= menuItem.price %></li>
+                    <li>Rating: <%= menuItem.rating %></li>
+                    <li>Details: <%= menuItem.details %></li>
+                </ul>
+            </li>
+            <% }); %>
+    </ol>
+</body>
+
+</html>
